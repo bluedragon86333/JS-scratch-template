@@ -1,8 +1,10 @@
 class Sprite {
 	x = 0;
 	y = 0;
-	width = 0;
-	height = 0;
+	xv = 0;
+	yv = 0;
+	width = 16;
+	height = 16;
 	direction = 0;
 	size = 1;
 	show = true;
@@ -33,5 +35,22 @@ class Sprite {
 	
 	draw = function() {
 		drawImg(this.costume,this.x,this.y);
+	};
+	
+	checkBounds = function() {
+		if (!this.canLeaveScreen) {
+			if (this.x < 0) {
+				this.x = 0;
+			}
+			if (this.x + this.width * this.size > canvas.width) {
+				this.x = canvas.width - this.width * this.size;
+			}
+			if (this.y < 0) {
+				this.y = 0;
+			}
+			if (this.y + this.height * this.size > canvas.height) {
+				this.y = canvas.height - this.height * this.size;
+			}
+		}
 	};
 }

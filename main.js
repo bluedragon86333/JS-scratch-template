@@ -1,6 +1,10 @@
 const framerate = 30;
 
-var player = new Sprite();
+const canvas = document.getElementById('game-canvas'); 
+var context = canvas.getContext('2d');
+
+
+var player = new Player();
 
 
 
@@ -15,31 +19,21 @@ function init() {
 
 
 function process() {
-	if (key.up) {
-		player.y -= 2;
-	}
-	if (key.down) {
-		player.y += 2;
-	}
-	if (key.right) {
-		player.x += 2;
-	}
-	if (key.left) {
-		player.x -= 2;
-	}
+	player.process();
 }
 
 
 function draw() {
-
+	context.clearRect(0, 0, 256,192);
 	drawImg("onion",0,0);
 	player.draw();
 }
 
 var mainloop = setInterval(function() {
-	context.clearRect(0, 0, 256,192);
-	process();
+	
 	draw();
+	process();
+	
 	if (1 == 0) {
 		clearInterval(mainloop);
 	}

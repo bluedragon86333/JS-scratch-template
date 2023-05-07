@@ -1,8 +1,6 @@
 var images = [];
 const imgRoot = "./";
 
-const canvas = document.getElementById('game-canvas'); 
-var context = canvas.getContext('2d');
 
 function addImage(name) {
 	let temp = new Image();
