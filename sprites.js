@@ -37,6 +37,11 @@ class Sprite {
 		drawImg(this.costume,this.x,this.y);
 	};
 	
+	setVel = function(newXV,newYV) {
+		this.xv = newXV;
+		this.yv = newYV;
+	};
+	
 	checkBounds = function() {
 		if (!this.canLeaveScreen) {
 			if (this.x < 0) {
@@ -48,8 +53,8 @@ class Sprite {
 			if (this.y < 0) {
 				this.y = 0;
 			}
-			if (this.y + this.height * this.size > canvas.height) {
-				this.y = canvas.height - this.height * this.size;
+			if (this.y + this.height> canvas.height) {
+				this.y = canvas.height - this.height;
 			}
 		}
 	};

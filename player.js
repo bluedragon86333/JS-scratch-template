@@ -1,22 +1,24 @@
 class Player extends Sprite {
-	function keyInput() {
+	
+	
+	keyInput() {
 		if (key.up) {
-			this.y -= yv;
+			this.y -= this.yv;
 		}
 		if (key.down) {
-			this.y += yv;
+			this.y += this.yv;
 		}
 		if (key.right) {
-			this.x += xv;
+			this.x += this.xv;
 		}
 		if (key.left) {
-			this.x -= xv;
+			this.x -= this.xv;
 		}
 	}
 	
 	
 	
-	function process() {
+	process() {
 		this.keyInput();
 		this.checkBounds();
 	}

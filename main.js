@@ -10,7 +10,7 @@ var player = new Player();
 
 
 function init() {
-	
+	player.setVel(2,2);
 	player.moveTo(100,50);
 	player.width = 32;
 	player.costume = "onion";
@@ -31,9 +31,9 @@ function draw() {
 
 var mainloop = setInterval(function() {
 	
-	draw();
-	process();
 	
+	process();
+	draw();
 	if (1 == 0) {
 		clearInterval(mainloop);
 	}
